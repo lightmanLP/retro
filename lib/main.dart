@@ -28,10 +28,11 @@ import 'package:retro/ui/components/ephemeral_bar.dart';
 import 'package:retro/ui/theme/theme.dart';
 import 'package:retro/utils/git.dart';
 import 'package:window_size/window_size.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  final errorFile = File('latest.log')
+  final errorFile = File(Directory.current.path + '/latest.log')
     ..createSync();
 
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
